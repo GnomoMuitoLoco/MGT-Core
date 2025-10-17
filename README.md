@@ -1,7 +1,7 @@
 # 🧩 MGT-Core
 
 **MGT-Core** é o núcleo da família de mods **Magnatas Original**.  
-Ele não é um mod jogável por si só, mas sim uma **biblioteca base** que fornece utilitários, APIs e integrações para outros mods como **MGT-Chat**, **MGT-Economy** e futuros módulos.
+Ele não é um mod jogável por si só, mas sim uma **biblioteca base** que fornece utilitários, APIs e integrações para outros mods como **MGT-Chat**, **MGT-Discord**, **MGT-Vip**, **MGT-Shop**, e futuros módulos.
 
 ---
 
