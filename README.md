@@ -1,25 +1,57 @@
+# 🧩 MGT-Core
 
-Installation information
-=======
+**MGT-Core** é o núcleo da família de mods **Magnatas Original**.  
+Ele não é um mod jogável por si só, mas sim uma **biblioteca base** que fornece utilitários, APIs e integrações para outros mods como **MGT-Chat**, **MGT-Economy** e futuros módulos.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+---
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+## 🎯 Objetivo
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+Centralizar funcionalidades comuns para evitar duplicação de código entre os mods da família **MGT**.  
+Com isso, cada mod pode focar apenas em sua lógica principal, enquanto o Core oferece suporte compartilhado.
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+---
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+## ⚙️ O que já implementa
+
+- **Utilitários de cores** (`ColorUtil`)  
+  - Conversão de códigos `&` e `§` em cores do Minecraft.  
+  - Suporte a cores hexadecimais (`&#RRGGBB`).  
+
+- **Integração com configs**  
+  - Estrutura para leitura de arquivos `.toml`.  
+  - Base para centralizar opções de formatação e comportamento.  
+
+- **Publicação local**  
+  - Configurado para ser publicado no Maven Local (`~/.m2/repository`) e consumido por outros mods.  
+
+---
+
+## 🛠️ O que vai implementar
+
+- **Sistema de placeholders**  
+  - Exemplo: `{sender_player_displayname}`, `{receiver_player_name}`, `{message}`.  
+  - Usado para formatar mensagens privadas, globais e locais.  
+
+- **Formatação configurável de mensagens**  
+  - Definição de formatos no `core-config.toml`.  
+  - Exemplo:
+    ```toml
+    tellFormatTo = "&fSussurrou para {receiver_player_displayname}: {message}"
+    tellFormatFrom = "{sender_player_displayname} sussurrou: {message}"
+    ```
+
+- **Integração com ranks/permissões**  
+  - Suporte a mods como FTB Ranks para prefixos e permissões.  
+
+- **API pública**  
+  - Métodos utilitários para logging, mensagens e integração entre mods.  
+
+---
+
+## 📌 Observação
+
+Este repositório existe apenas para **documentar e organizar o núcleo dos mods MGT**.  
+Ele **não é distribuído separadamente** e só faz sentido em conjunto com os outros mods da família.
+
+---
